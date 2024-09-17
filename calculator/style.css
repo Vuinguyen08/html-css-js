@@ -1,0 +1,118 @@
+* {
+     margin: 0;
+     padding: 0;
+     font-family: "Helvetica Neue", sans-serif;
+     box-sizing: border-box;
+   }
+   
+   /*
+     rem: root element => tính dựa vào font-size browser
+     em: parent elemnt => dựa vào font size của parent
+   */
+   
+   body {
+     /* thay đổi màu nền*/
+     background-color: #8bc6ec;
+     /*  set chiều cao cho thẻ bằng 100 view height */
+     min-height: 100vh;
+     /* flex box*/
+     display: flex;
+     /* thay đổi phần vào trung tâm theo chiều dọc*/
+     align-items: center;
+     /* thay đổi phần vào trung tâm theo chiều ngang*/
+     justify-content: center;
+   }
+   
+   .container {
+     /* set chiều rộng*/
+     width: 350px;
+     /* set chiều cao*/
+     height: 500px;
+     /* thay đổi màu nền*/
+     background-color: black;
+     /*bo góc*/
+     border-radius: 10px;
+     /* chỉnh padding nội suy*/
+     padding: 25px;
+   }
+   
+   .calc-text p {
+     color: white;
+     /*kích cỡ chữ*/
+     font-size: 3.5rem;
+     /* căn chỉnh chữ về cuối*/
+     text-align: end;
+     width: 100%;
+   }
+   
+   .calc-keys {
+     /* thay đôi layout thành dạng lưới*/
+     display: grid;
+     /* chia thành 4 cột bằng nhau*/
+     grid-template-columns: repeat(4, 1fr);
+     /* thay đổi khoảng giữa các row*/
+     grid-row-gap: 15px;
+     /* thay đổi khoảng giữa các column*/
+     grid-column-gap: 10px;
+   }
+   
+   .calc-keys button {
+     /*set font size */
+     font-size: 1.5rem;
+     /*bo góc */
+     border-radius: 50%;
+     /*set height */
+     height: 65px;
+     /*  set width */
+     width: 65px;
+     /*loại bỏ borders*/
+     border: none;
+     /*căn giữa chữ*/
+     text-align: center;
+     /*thay đổi con trỏ chuột thành bàn tay*/
+     cursor: pointer;
+   }
+   
+   .numbers {
+     background-color: #333;
+     color: white;
+   }
+   
+   .numbers:active {
+     filter: brightness(150%);
+   }
+   
+   .key-operate {
+     transition: none;
+     background-color: #a6a6a6;
+   }
+   
+   .key-operate:active {
+     filter: brightness(150%);
+   }
+   
+   .key-others {
+     background-color: #ff9501;
+     /*màu chữ*/
+     color: white;
+   }
+   
+   .key-zero {
+     /*thành phần ô sẽ chiếm 2 phần trong tổng số các ô cùng hàng*/
+     grid-column: span 2;
+     width: 100% !important;
+     /*ưu tiên sử dụng css ở đây khi có nhiều css trùng*/
+     border-radius: 30px !important;
+   }
+   
+   .key-operations:active,
+   .key-operations:focus {
+     /*màu nền*/
+     background-color: white;
+     /*màu chữ*/
+     color: #ff9501;
+   }
+   
+   .over-size {
+     font-size: 3rem !important;
+   }
